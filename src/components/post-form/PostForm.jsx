@@ -28,6 +28,8 @@ const PostForm = ({post}) => {
 
     const navigate = useNavigate()
     const userData = useSelector(state => state.auth.userData)
+    // console.log("Hehe: ",userData);
+    
 
     const submit = async (data) =>{
         // if already existing post then for updating post need to upload the new image file
@@ -60,6 +62,8 @@ const PostForm = ({post}) => {
                     ...data,
                     userId: userData.$id,
                 })
+                // console.log("hehe22: ",dbPost);
+                
                 if(dbPost){
                     navigate(`/post/${dbPost.$id}`)
                 }
