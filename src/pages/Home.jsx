@@ -2,19 +2,25 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import appwriteService from '../appwrite/config'
 import { Container, PostCard } from '../components'
+import { useSelector } from 'react-redux'
 
 
 const Home = () => {
     const [posts, setPosts] = useState([])
+    const autStatus = useSelector((state) => state.auth.status);
 
     useEffect(()=>{
-        appwriteService.getPosts().then((posts)=> {
-            if(posts){
-                // appWrite response has documents where the id are stored
-                setPosts(posts.documents)
-            }
-        })
-    },[])
+        if(autStatus){
+            appwriteService.getPosts().then((posts)=> {
+                if(posts){
+                    // appWrite response has documents where the id are stored
+                    setPosts(posts.documents)
+                }
+            })
+        } else {
+            setPosts([])
+        }
+    },[autStatus])
 
     if (posts.length === 0){
         return (
