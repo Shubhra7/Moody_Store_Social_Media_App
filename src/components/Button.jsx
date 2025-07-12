@@ -8,7 +8,7 @@ const Button = ({
     ...props
 }) => {
   return (
-    <button className={`px-4 py-2 rounded-lg ${bgColor} ${textColor} ${className}`} {...props}>
+    <button className={`px-4 py-2 rounded-lg ${bgColor} ${textColor} hover:bg-blue-700 transition duration-300 ${className}`} {...props}>
         {/* children help to pass the text(child) in position */}
         {children}
     </button>

@@ -32,14 +32,19 @@ function Signup() {
     }
 
   return (
-    <div className="flex items-center justify-center">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+    // <div className="flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#E0ECFF] to-[#F9FAFB]">
+            {/* <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+             */}
+             <div className="mx-auto w-full max-w-md bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
             <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
                     </span>
                 </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
+                <h2 className="text-center text-3xl font-extrabold text-gray-800 mb-2">Create an Account</h2>
+                <p className="text-center text-gray-500 mb-6 text-sm">Join us and start sharing your mood today.</p>
+
                 <p className="mt-2 text-center text-base text-black/60">
                     Already have an account?&nbsp;
                     <Link
@@ -49,7 +54,7 @@ function Signup() {
                         Sign In
                     </Link>
                 </p>
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+                {error && <p className="text-red-500 mt-4 text-sm text-center">{error}</p>}
 
                 <form onSubmit={handleSubmit(create)}>
                     <div className='space-y-5'>
