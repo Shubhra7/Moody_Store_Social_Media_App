@@ -2,8 +2,6 @@
 
 Welcome to **Moody Store**, a lightweight and modern social media blog platform where users can express their moods, thoughts, and stories by creating and managing posts after signing up. Built with **React**, **Appwrite**, and **Tailwind CSS**, this app focuses on a clean, responsive UI and smooth user experience.
 
-![Moody Store Screenshot](./preview.png) <!-- Replace with your screenshot path -->
-
 ---
 
 ## 🚀 Live Demo
