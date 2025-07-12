@@ -2,6 +2,7 @@
 import React from "react"
 import {Editor} from '@tinymce/tinymce-react'
 import { Controller } from "react-hook-form"
+import conf from "../conf/conf"
 
 // then Controller helps to get reference from react-hook-form when we use this RTE in that form
 
@@ -20,7 +21,7 @@ export function RTE({name, control, label, defaultValue=""}){
         control={control}  // attaching control for RHF
         render={({field: {onChange}}) => (
             <Editor
-                apiKey="ig87phcj4ltzhsb8y5rwgi0a2yv5guqaa6l3zjwreitw3aa6"
+                apiKey={conf.tinymceApiKey}
                 initialValue={defaultValue}
                 init={{
                         initialValue: defaultValue,
