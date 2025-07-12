@@ -39,18 +39,23 @@ const Home = () => {
     }
 
     return (
-        <div className='w-full py-8'>
+        <div className="w-full py-8">
             <Container>
-                <div className='flex flex-wrap'>
-                    {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
-                            <PostCard {...post} />
-                        </div>
-                    ))}
+            <div className="flex flex-wrap">
+                {posts.map((post) => (
+                <div
+                    key={post.$id}
+                    className="p-2 w-full sm:w-1/2 lg:w-1/4"
+                >
+                    <div className="shadow-[0_4px_8px_rgba(0,0,0,0.1)] bg-[#F0F4FF] text-black p-4 rounded-lg hover:scale-105 transition duration-300 ease-in-out">
+                    <PostCard {...post} />
+                    </div>
                 </div>
+                ))}
+            </div>
             </Container>
         </div>
-    )
+)
 }
 
 export default Home

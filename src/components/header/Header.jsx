@@ -41,35 +41,37 @@ const Header = () => {
   ]
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
-      <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
-            <Link to='/'>
-              <Logo width='70px'/>
-            </Link>
-          </div>
-          {/* Creating links by effecient manner */}
-          <ul className='flex ml-auto'>
-            {navItems.map((item) => 
-              item.active ? (
-                <li key={item.name}>
-                  <button onClick={()=> navigate(item.slug)}
-                    className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'>
-                    {item.name}
-                  </button>
-                </li>
-              ) : null
-            )}
-            {authStatus && (
-              <li>
-                <LogoutBtn/>
+   <header className="py-4 bg-white shadow-md">
+    <Container>
+      <nav className="flex items-center">
+        <div className="mr-4">
+          <Link to="/">
+            <Logo width="70px" />
+          </Link>
+        </div>
+        <ul className="flex ml-auto gap-2">
+          {navItems.map((item) =>
+            item.active ? (
+              <li key={item.name}>
+                <button
+                  onClick={() => navigate(item.slug)}
+                  className="inline-block px-5 py-2 rounded-full text-sm font-medium text-gray-700 bg-white border border-blue-200 hover:bg-blue-500 hover:text-white transition duration-200"
+                >
+                  {item.name}
+                </button>
               </li>
-            )}
-          </ul>
-        </nav>
-      </Container>
-    </header>
+            ) : null
+          )}
+          {authStatus && (
+            <li>
+              <LogoutBtn />
+            </li>
+          )}
+        </ul>
+      </nav>
+    </Container>
+  </header>
+
   )
 }
 
